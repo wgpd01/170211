@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Array</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <input type="button" id="test" value="click me to test your code" />
+    <div id="report"></div>
+
+<script>
+
+test.onclick = function () {
+
+    var data = [3, 0, 1, 8, 7, 2, 5, 4, 9, 6];
+
+    var sum = 0;
+    data.forEach(function (x) {
+        console.log(x);
+        sum += x;
+    });
+
+    report.innerText = sum;
+
+}  // end of test.onclick
+
+</script>
+
+</body>
+</html>
