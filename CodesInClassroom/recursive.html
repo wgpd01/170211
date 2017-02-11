@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Array</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <input type="button" id="test" value="click me to test your code" />
+    <div id="report"></div>
+
+<script>
+
+function fact(value) {
+    report.innerHTML += value + "<br>";
+    if (value > 1) {            
+        return value * fact(value - 1);
+    } else {
+        return 1;
+    }
+}
+
+test.onclick = function () {
+    
+    alert(fact(5));
+
+}  // end of test.onclick
+
+</script>
+
+</body>
+</html>

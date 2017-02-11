@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Array</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <input type="button" id="test" value="click me to test your code" />
+    <div id="report"></div>
+
+<script>
+
+function swap(a, index1, index2) {
+    var backup = a[index1];  // x ←----- y
+    a[index1] = a[index2];   // └ backup ┘
+    a[index2] = backup;
+}
+//  newValue
+//     ↓
+// [0 ... rightIndex]
+function insert(a, rightIndex, newValue) {
+    var i = rightIndex;
+    // Bug! 
+    while (a[i - 1] > a[i]) {  // 如果 i = 0, i - 1 ==> -1 喔!
+        swap(a, i-1, i);
+        i--;
+    }
+}
+test.onclick = function () {
+    var data = [3, 0, 1, 8, 7, 2, 5, 4, 9, 6];
+    var dataLength = data.length;
+    for (var round = 1; round < dataLength; round++) {
+        insert(data, round, data[round]);
+    }
+    report.innerText = data.toString();
+}  // end of test.onclick
+
+</script>
+
+</body>
+</html>
